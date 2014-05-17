@@ -50,9 +50,9 @@ function UIDemoApp:enterScene(sceneName,backScaneName, param,...)
 	param.sceneName = sceneName;
     local scene = enterSceneFun(sceneName,param, ...);
     
-    self.previousSceneName_ = self.currentSceneName_;
-    self.currentSceneName_ = sceneName;
-    self.currentScene_ = scene;
+    self.previousSceneName_ = self.currentSceneName_;--上一场景的名称
+    self.currentSceneName_ = sceneName;--当前场景名称
+    self.currentScene_ = scene;--当前场景
 end
 
 

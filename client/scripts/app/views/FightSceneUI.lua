@@ -17,13 +17,13 @@ function FightSceneUI:init()
    	
 	local bg = display.newSprite("#beijing.png");
 	self:addChild(bg);
+	GameUtil.spriteFullScreen(bg)
 	
-	
-	local kuang = display.newSprite("#kuang.png",0,95)
-	self:addChild(kuang);
-	
-	local kuang = display.newSprite("#centerKuang.png",0,95)
-	self:addChild(kuang);
+--	local kuang = display.newSprite("#kuang.png",0,95)
+--	self:addChild(kuang);
+--	
+--	local kuang = display.newSprite("#centerKuang.png",0,95)
+--	self:addChild(kuang);
 	
 	--[[
 	充值   
@@ -39,9 +39,9 @@ function FightSceneUI:init()
         :addTo(self)
     ]]
 	local param = {
-		imageName		  = "#btn_click_recharge.png",
-		x     = -160,
-		y     = 435,
+		imageName		  = "#btn_normal_recharge.png",
+		x     = display.left + 30,
+		y     = display.top - 20,
 		imageParam = {
 	    	imageName = "#txt_recharge.png",
 	    },
@@ -56,7 +56,7 @@ function FightSceneUI:init()
     --返回
     local param = {
 		imageName		  = "#btn_normal_recharge.png",
-		x     = 160,
+		x     = display.right - 10,
 		y     = 435,
 		imageParam = {
 	    	imageName = "#txt_back.png",

@@ -3,7 +3,7 @@ local FightModel = class("FightModel")
 
 
 local point ={
-	Jpoint(-204,325),--1
+	Jpoint(display.left+150,display.top - 240),--1
 	Jpoint(-204+68,325),
 	Jpoint(-204+68*2,325),
 	Jpoint(-204+68*3,325),
@@ -36,7 +36,7 @@ local point ={
 }
 
 
-local gridImageName = {"#grid1.png","#grid2.png","#grid3.png"};
+local gridImageName = {"#grid1.png","#grid2.png"}--,"#grid3.png"};
 
 
 --[[
@@ -96,11 +96,12 @@ function FightModel:createAllGridSprite(batch)
 	 --所有格子初始化
     self.allGridSpt_ = {};
     for index = 1, 24, 1 do 
-		local num = math.random(1, 3);
+		local num = math.random(1, 23);
 		
 	
 		local point =  self:getPointByIndex(index);
-		local spt = display.newSprite(gridImageName[num],point("x"),point("y"))
+		--local spt = display.newSprite(gridImageName[num],point("x"),point("y"))
+		local spt = display.newSprite("#"..num..".png",point("x"),point("y"))
 		batch:addChild(spt);
     	
     	
@@ -111,7 +112,8 @@ function FightModel:createAllGridSprite(batch)
     --选中格子的状态
     self.gridSelectSptIndex_ = 1;
    	local point =  self:getPointByIndex(self.gridSelectSptIndex_);
-    self.gridSelectSpt_ = display.newSprite("#gridSelect.png",point("x"),point("y"))
+--    self.gridSelectSpt_ = display.newSprite("#gridSelect.png",point("x"),point("y"))
+     self.gridSelectSpt_ = display.newSprite("#grid3.png",point("x"),point("y"))
     batch:addChild(self.gridSelectSpt_);
 end
 
