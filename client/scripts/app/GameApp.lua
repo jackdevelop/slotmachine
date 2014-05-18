@@ -3,6 +3,7 @@ require("config")
 require("framework.init")
 require("framework.shortcodes")
 require("framework.cc.init")
+	
 
 require("engin.config.EnginInit")
 require("app.config.init")
@@ -22,7 +23,7 @@ end
 
 
 function UIDemoApp:run()
-    CCFileUtils:sharedFileUtils():addSearchPath("res/")
+     CCFileUtils:sharedFileUtils():addSearchPath("res/")
     local sceneName,backScaneName = SceneConstants.FightLoadingScene();
     self:enterScene(sceneName,backScaneName)
   	--self:enterScene(SceneConstants.FightLoadingScene, nil, "flipy")
