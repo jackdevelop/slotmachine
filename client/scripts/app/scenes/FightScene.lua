@@ -19,6 +19,8 @@ function FightScene:ctor()
 	fightSceneUI:init();
 	self:getUILayer():addChild(fightSceneUI);
 	self.fightSceneUI_ = fightSceneUI;
+	
+	
 end
 
 
